@@ -3,14 +3,62 @@ body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
-  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+  overflow-y: scroll;
+  background: linear-gradient(#2f1843, #20112e) no-repeat;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.App.container {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.logo {
+  color: #fff;
+  text-align: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.logo h2 {
+  margin-top: 2px;
+}
+
+.badges {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.badges a {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.badges img {
+  height: 40px;
 }
 
 .privacyPolicy {
+  color: '#fff';
 }
