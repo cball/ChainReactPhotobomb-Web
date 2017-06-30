@@ -6,6 +6,7 @@ import Privacy from './Components/Privacy';
 import logo from './Images/logo.svg';
 import appStoreBadge from './Images/app-store.svg';
 import playStoreBadge from './Images/play-store.png';
+import ebLogo from './Images/eb-logo.png';
 
 class App extends Component {
   render() {
@@ -33,6 +34,13 @@ class App extends Component {
           <Link to="/">Home</Link>
           <Link to="/privacy">Privacy</Link>
         </nav>
+
+        <div className="eb-logo">
+          <div>Sponsored By:</div>
+          <a href="https://echobind.com">
+            <img src={ebLogo} />
+          </a>
+        </div>
       </div>
     );
   }

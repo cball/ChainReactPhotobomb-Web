@@ -62,3 +62,46 @@ a {
 .privacyPolicy {
   color: '#fff';
 }
+
+.photoList {
+  margin-top: 3rem;
+  box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.9);
+  max-height: 576px;
+  overflow: hidden;
+}
+
+.photoContainer {
+  display: inline-block;
+  width: 92px;
+  height: 92px;
+  padding: 2px;
+  text-align: center;
+}
+
+.photo {
+  display: inline-block;
+  width: 92px;
+  height: 92px;
+}
+
+nav {
+  margin: 2rem;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 1rem;
+}
+
+.eb-logo {
+  margin: 3rem auto 0;
+  width: 140px;
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.eb-logo img {
+  margin-top: 5px;
+  max-width: 100%;
+}

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { gql, graphql } from 'react-apollo';
+import ReactList from 'react-list';
 
 export const allPhotosQuery = gql`
   query {
-    allPhotos(orderBy: createdAt_DESC) {
+    allPhotos(first: 60, orderBy: createdAt_DESC) {
       id
       file {
         id
@@ -29,6 +30,7 @@ const photosSubscription = gql`
 `;
 
 const PHOTO_SIZE = 96;
+const PHOTO_LIMIT = 50;
 
 class Home extends Component {
   constructor(props) {
@@ -43,23 +45,32 @@ class Home extends Component {
   }
   renderPhotoList = () => {
     const { allPhotos } = this.props.allPhotosQuery;
-    debugger;
 
-    return allPhotos.map(p =>
-      <div>
-        {this.renderPhoto(p)}
+    return (
+      <div className="photoList">
+        <ReactList
+          itemRenderer={this.renderPhoto}
+          length={allPhotos.length}
+          type="uniform"
+        />
       </div>
     );
   };
 
-  renderPhoto = photo => {
-    const { id, file } = photo;
+  renderPhoto = (index, key) => {
+    const { allPhotos } = this.props.allPhotosQuery;
+    const item = allPhotos[index];
+    const { id, file } = item;
     const imagePath = file.url.replace('files', 'images');
     // get smallest size possible accounting for 2x dpi
     const roundedSize = Math.ceil(PHOTO_SIZE) * 2;
     const uri = `${imagePath}/${roundedSize}x${roundedSize}`;
 
-    return <img src={uri} />;
+    return (
+      <div className="photoContainer">
+        <img src={uri} className="photo" />
+      </div>
+    );
   };
 
   render() {
@@ -99,7 +110,7 @@ class Home extends Component {
 
 const prependNewPhotos = (previousState, { subscriptionData }) => {
   const newPhoto = subscriptionData.data.Photo.node;
-  const allPhotos = [newPhoto, ...previousState.allPhotos];
+  const allPhotos = [newPhoto, ...previousState.allPhotos].slice(0, -1);
 
   return {
     allPhotos
