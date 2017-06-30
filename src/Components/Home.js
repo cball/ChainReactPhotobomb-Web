@@ -30,7 +30,6 @@ const photosSubscription = gql`
 `;
 
 const PHOTO_SIZE = 96;
-const PHOTO_LIMIT = 50;
 
 class Home extends Component {
   constructor(props) {
@@ -67,8 +66,8 @@ class Home extends Component {
     const uri = `${imagePath}/${roundedSize}x${roundedSize}`;
 
     return (
-      <div className="photoContainer">
-        <img src={uri} className="photo" />
+      <div className="photoContainer" key={id}>
+        <img src={uri} className="photo" alt={`${index}`} />
       </div>
     );
   };

@@ -38,7 +38,7 @@ class App extends Component {
         <div className="eb-logo">
           <div>Sponsored By:</div>
           <a href="https://echobind.com">
-            <img src={ebLogo} />
+            <img src={ebLogo} alt="Echobind logo" />
           </a>
         </div>
       </div>
