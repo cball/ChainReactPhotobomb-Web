@@ -17,10 +17,10 @@ class App extends Component {
           <h2>Photobomb!</h2>
         </div>
         <div className="badges">
-          <a href="http://play.google.com/store/chainreactphotobomb?pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+          <a href="https://play.google.com/store/apps/details?id=com.echobind.chainreactphotobomb">
             <img alt="Get it on Google Play" src={playStoreBadge} />
           </a>
-          <a href="http://google.com">
+          <a href="https://itunes.apple.com/us/app/chain-react-photobomb/id1253527606?ls=1&mt=8">
             <img alt="Get it on the App Store" src={appStoreBadge} />
           </a>
         </div>
