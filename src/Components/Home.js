@@ -4,7 +4,7 @@ import ReactList from 'react-list';
 
 export const allPhotosQuery = gql`
   query {
-    allPhotos(first: 60, orderBy: createdAt_DESC) {
+    allPhotos(first: 60, filter: { flagged: false }, orderBy: createdAt_DESC) {
       id
       file {
         id
