@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { gql, graphql } from 'react-apollo';
-import ReactList from 'react-list';
 
 export const allPhotosQuery = gql`
   query {
@@ -47,18 +46,12 @@ class Home extends Component {
 
     return (
       <div className="photoList">
-        <ReactList
-          itemRenderer={this.renderPhoto}
-          length={allPhotos.length}
-          type="uniform"
-        />
+        {allPhotos.map(p => this.renderPhoto(p))}
       </div>
     );
   };
 
-  renderPhoto = (index, key) => {
-    const { allPhotos } = this.props.allPhotosQuery;
-    const item = allPhotos[index];
+  renderPhoto = (item, index) => {
     const { id, file } = item;
     const imagePath = file.url.replace('files', 'images');
     // get smallest size possible accounting for 2x dpi
