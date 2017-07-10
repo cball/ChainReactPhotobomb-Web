@@ -23,7 +23,8 @@ a {
 .container {
   display: flex;
   flex-direction: column;
-  width: 960px;
+  /*width: 100%;
+  max-width: 960px;*/
   margin: 0 auto;
 }
 
@@ -64,6 +65,10 @@ a {
 }
 
 .photoList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin-top: 3rem;
   box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.9);
   max-height: 576px;
@@ -72,6 +77,7 @@ a {
 
 .photoContainer {
   display: inline-block;
+  flex: 1;
   width: 92px;
   height: 92px;
   padding: 2px;
